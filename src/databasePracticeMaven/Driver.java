@@ -20,10 +20,11 @@ public class Driver {
 			// P:password
 			// SQL INJECTION:" ""="
 			// if (p.loginConcatenation(username, password)) {
-			if (p.loginParameters(username, password)) {
+			int user_id = p.loginParameters(username, password);
+			if (user_id >= 0) {
 				System.out.println("Congratulations you are logged in!");
 				Application ap = new Application();
-				ap.start();
+				ap.start(user_id);
 			}
 			else {
 				System.out.println("Who are you?  I don't recognize those credintials.");			
