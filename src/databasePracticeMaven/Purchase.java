@@ -1,6 +1,6 @@
 package databasePracticeMaven;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Purchase {
 	
@@ -8,7 +8,8 @@ public class Purchase {
 	private int user_id;
 	private String name;
 	private double price;
-	private LocalDate create_date;
+	private Date create_date;
+	private String staffName;
 	
 	public int getId() {
 		return id;
@@ -42,22 +43,54 @@ public class Purchase {
 		this.price = price;
 	}
 	
-	public LocalDate getCreate_date() {
+	public Date getCreate_date() {
 		return create_date;
 	}
 	
-	public void setCreate_date(LocalDate create_date) {
+	public void setCreate_date(Date create_date) {
 		this.create_date = create_date;
 	}
 	
-	public Purchase(int id, int user_id, String name, double price, LocalDate create_date) {
+	public String getStaffName() {
+		return staffName;
+	}
+
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
+	
+	public Purchase(int id, int user_id, String name, double price, Date date, String staffname) {
 
 		this.id = id;
 		this.user_id = user_id;
 		this.name = name;
 		this.price = price;
-		this.create_date = create_date;
+		this.create_date = date;
+		this.staffName = staffName;
 	}
+	
+	public Purchase(int id, int user_id, String name, double price, String staffname) {
+
+		this.id = id;
+		this.user_id = user_id;
+		this.name = name;
+		this.price = price;
+		this.staffName = staffName;
+	}
+	
+	public Purchase(int user_id, String name, double price) {
+
+		this.user_id = user_id;
+		this.name = name;
+		this.price = price;
+		
+	}
+	
+	public Purchase() {
+
+	}
+
+
 	
 	
 
